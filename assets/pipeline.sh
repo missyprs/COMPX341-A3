@@ -6,4 +6,8 @@ npm install
 #then run the npm build to make sure that it compiles
 npm run build
 #then run the start
-npm run start
+#npm run start
+
+echo $1
+cd ../../../
+
