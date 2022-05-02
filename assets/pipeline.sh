@@ -8,10 +8,10 @@ npm run build
 #then run the start
 #npm run start
 
-echo $1
 cd ../
 git add .
 git commit -m $1
 git push origin main
 git status
 
+echo $1 "done"
