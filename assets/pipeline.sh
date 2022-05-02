@@ -12,6 +12,6 @@ echo $1
 cd ../
 git add .
 git commit -m $1
-git push origin master
-got status
+git push origin main
+git status
 
