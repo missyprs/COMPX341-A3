@@ -9,5 +9,9 @@ npm run build
 #npm run start
 
 echo $1
-cd ../../../
+cd ../
+git add .
+git commit -m $1
+git push origin master
+got status
 
