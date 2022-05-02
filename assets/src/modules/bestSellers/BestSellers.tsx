@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import { API } from "aws-amplify";
 
 import BestSellerProductRow from "./BestSellerProductRow";
