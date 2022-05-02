@@ -15,7 +15,7 @@ npm run build
 
 cd ../
 git add .
-git commit -m S
+git commit -m "$S"
 git push origin main
 git status
 
