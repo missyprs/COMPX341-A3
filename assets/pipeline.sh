@@ -5,6 +5,8 @@ then
   exit 2
 fi
 
+S="$*"
+
 echo "running npm commands"
 #run the npm install
 npm install
@@ -13,10 +15,10 @@ npm run build
 
 cd ../
 git add .
-git commit -m $1
+git commit -m S
 git push origin main
 git status
 
-echo $1 "done"
+echo $S
 #then run the start
 #npm run start
