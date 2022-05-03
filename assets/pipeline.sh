@@ -30,6 +30,6 @@ else
   exit 1
 fi
 
-echo $S
+#echo $S
 #then run the start
 npm run start
