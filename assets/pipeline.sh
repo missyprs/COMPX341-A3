@@ -34,4 +34,4 @@ fi
 #move back into the assets folder to be able to run the site
 cd assets
 #then run the start
-npm run start
+#npm run start
