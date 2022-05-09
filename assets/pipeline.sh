@@ -1,36 +1,31 @@
-#!/bin/sh
+#!/usr/bin/env bash
+#checks if there is a commit message
 if [[ -z $1 ]]
 then
-  echo "please input a commit message"
-  exit 2
-fi
-#set the S variable to the commit message
-S="$*"
-
-echo "running npm commands"
-#run the npm install
-npm install
-#then run the npm build to make sure that it compiles
-npm run build
-E="$?"
-
-#if the run build exits with a code other than 0
-echo $E #this tells me what code the build exited with.  if it is more than 0 there was a compile error
-
-if [[ "$E" -eq "0" ]]
-then
-  echo "no compile error"
-  cd ../
-  git add .
-  git commit -m "$S"
-  git push origin main
-  git status
-else
-  echo "compile error"
+  echo "Please input a commit message"
   exit 1
 fi
 
+#S=$*#set the S variable to the commit message
 #echo $S
+npm install #run the npm install
+npm run build #then run the npm build to make sure that it compiles
+E="$?" #E holds the exit code of npm run build
+
+#if run build exits with exit code 0
+if [[ "$E" -eq "0" ]]
+then #commit to git
+  cd ../
+  git add .
+  git commit -m "$1"
+  git push origin main
+  git status
+else
+  #the exit code was not 0 so there was an error
+  echo "There was a compile error and no commit occured"
+  exit 1
+fi
+
 #move back into the assets folder to be able to run the site
 cd assets
 #then run the start
