@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
 echo "(0) Preparing Pipeline"
+echo "Ensure that your commit message is in double quotes \" \" "
 #checks if there is a commit message
 if [[ -z $1 ]]
 then
@@ -13,8 +13,7 @@ npm install #run the npm install
 npm run build #then run the npm build to make sure that it compiles
 E="$?" #E holds the exit code of npm run build
 
-#if run build exits with exit code 0
-if [[ "$E" -eq "0" ]]
+if [[ "$E" -eq "0" ]] #if run build exits with exit code 0
 then #commit to git
   echo "Build Succeeded"
 else
@@ -31,7 +30,7 @@ cd ../
   git status
 
 echo "(3) Deploying Application"
-#move back into the assets folder to be able to run the site
-cd assets
-#then run the start
-npm run start
+cd assets #move back into the assets folder to be able to run the site
+npm run start #then run the start
+
+
