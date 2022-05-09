@@ -6,8 +6,8 @@ then
   exit 1
 fi
 
-#S=$*#set the S variable to the commit message
-#echo $S
+echo "this bash file assumes that the commit message is enclosed in double quotes \" \" if not please reset the commit message in double quotes"
+
 npm install #run the npm install
 npm run build #then run the npm build to make sure that it compiles
 E="$?" #E holds the exit code of npm run build
@@ -29,4 +29,4 @@ fi
 #move back into the assets folder to be able to run the site
 cd assets
 #then run the start
-#npm run start
+npm run start
